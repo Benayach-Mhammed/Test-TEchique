@@ -1,0 +1,14 @@
+﻿@model Test.Models.ApplicationViewModel
+
+@{
+    ViewData["Title"] = "Open CV";
+}
+
+<h1>Open CV</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">CV du candidat</h5>
+        <embed src="@Model.CVFile.FileName" type="application/pdf" width="100%" height="600px" />
+    </div>
+</div>

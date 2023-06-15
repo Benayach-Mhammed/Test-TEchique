@@ -1,0 +1,40 @@
+﻿@model Test.Views.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Admin - Candidatures";
+}
+
+<h1>Candidatures</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Mail</th>
+            <th>Téléphone</th>
+            <th>Niveau d'étude</th>
+            <th>Années d'expérience</th>
+            <th>Dernier employeur</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var application in Model.Candidates)
+        {
+            <tr>
+                <td>@application.Nom</td>
+                <td>@application.Prenom</td>
+                <td>@application.Mail</td>
+                <td>@application.Telephone</td>
+                <td>@application.NiveauEtude</td>
+                <td>@application.AnneesExperience</td>
+                <td>@application.DernierEmployeur</td>
+                <td>
+                    <a href="/Admin/OpenCV/@application.Mail">Ouvrir le CV</a> |
+                    <a href="/Admin/Delete/@application.Mail">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

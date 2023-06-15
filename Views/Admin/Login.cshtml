@@ -1,0 +1,15 @@
+﻿@model Test.Views.Admin.LoginModel
+
+<h1>Connexion</h1>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="Password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+</form>

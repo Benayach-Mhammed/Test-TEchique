@@ -1,0 +1,60 @@
+﻿@model Test.Views.Home.SubmitApplicationModel
+
+<h2>Formulaire de soumission de candidature</h2>
+
+@using (Html.BeginForm("SubmitApplication", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nom)
+        @Html.TextBoxFor(model => model.Nom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nom)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Prenom)
+        @Html.TextBoxFor(model => model.Prenom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Prenom)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Mail)
+        @Html.TextBoxFor(model => model.Mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Mail)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telephone)
+        @Html.TextBoxFor(model => model.Telephone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Telephone)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NiveauEtude)
+        @Html.TextBoxFor(model => model.NiveauEtude, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.NiveauEtude)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AnneesExperience)
+        @Html.TextBoxFor(model => model.AnneesExperience, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.AnneesExperience)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DernierEmployeur)
+        @Html.TextBoxFor(model => model.DernierEmployeur, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.DernierEmployeur)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CVFile)
+        <input type="file" name="CVFile" class="form-control-file" />
+        @Html.ValidationMessageFor(model => model.CVFile)
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Soumettre" class="btn btn-primary" />
+    </div>
+}
